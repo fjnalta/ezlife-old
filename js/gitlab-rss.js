@@ -14,7 +14,7 @@ function createEntry(link, title, date) {
 function loadezlifeRSS() {
     $.ajax(feed, {
         accepts: {
-            xml: "application/rss+xml"
+            xml: "application/xml"
         },
         dataType: "xml",
         success: function (data) {
@@ -25,6 +25,3 @@ function loadezlifeRSS() {
         }
     });
 }
-
-
-
