@@ -1,5 +1,4 @@
 var feed = "https://ezlife.eu/apps/gitlab/philippm/ezlife.eu/commits/master.atom";
-var i = 0;
 
 function createEntry(link, title, date) {
     "use strict";
