@@ -6,7 +6,7 @@ function createEntry(link, title, date) {
     mylink.setAttribute('href', link);
     mylink.appendChild(document.createTextNode(title));
     myFeed.appendChild(document.createTextNode(date));
-    myFeed.appendChild(document.createTextNode(" - "))
+    myFeed.appendChild(document.createTextNode(" - "));
     myFeed.appendChild(mylink);
     document.getElementById("ezlifeRSS").appendChild(myFeed);
 }
@@ -20,7 +20,7 @@ function loadezlifeRSS() {
         success: function (data) {
             $(data).find("entry").each(function () {
                 var el = $(this);
-                createEntry(el.find("link").text(), el.find("title").text(), el.find("updated").text());
+                createEntry(el.find("id").text(), el.find("title").text(), el.find("updated").text());
             });
         }
     });
