@@ -15,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <!-- More JavaScript -->
-    <script language="javascript" type="text/javascript" src="js/gitlab-rss.js"></script>
+    <script language="javascript" type="text/javascript" src="js/loadRSS.js"></script>
     
     <!-- Import Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -181,6 +181,7 @@
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#ezlife">ezlife.eu</a></li>
         <li><a data-toggle="tab" href="#wiki">wiki.ezlife.eu</a></li>
+        <li><a data-toggle="tab" href="#ezRunner">ezRunner</a></li>
         <li><a data-toggle="tab" href="#schwesta">[EZ]schwesta</a></li>
         <li><a data-toggle="tab" href="#eise">[EZ]eise</a></li>
     </ul>
@@ -189,7 +190,7 @@
             <h2>Development</h2>
             <p><b>Last 10 Commits</b></p>
             <div id="ezlifeRSS">
-                <script type="text/javascript">loadezlifeRSS();</script>
+                <script type="text/javascript">loadRSS("ezlife");</script>
             </div>
         </div>
         <div id="wiki" class="tab-pane fade">
@@ -202,7 +203,7 @@
             <h2>Development</h2>
             <p><b>Last 10 Commits</b></p>
             <div id="ezRunnerRSS">
-                <!-- ezRunner RSS here -->
+                <script type="text/javascript">loadRSS("ezRunner");</script>
             </div>
         </div>
        <div id="schwesta" class="tab-pane fade">

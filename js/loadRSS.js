@@ -1,6 +1,4 @@
-var feed = "https://ezlife.eu/apps/gitlab/philippm/ezlife.eu/commits/master.atom";
-
-function createEntry(link, title, date) {
+function createEntry(link, title, date, id) {
     "use strict";
     var myFeed = document.createElement("P");
     var mylink = document.createElement("A");
@@ -9,12 +7,25 @@ function createEntry(link, title, date) {
     myFeed.appendChild(document.createTextNode(date));
     myFeed.appendChild(document.createTextNode(" - "));
     myFeed.appendChild(mylink);
-    document.getElementById("ezlifeRSS").appendChild(myFeed);
+    document.getElementById(id).appendChild(myFeed);
 }
 
-function loadezlifeRSS() {
+function loadRSS(feed) {
     "use strict";
-    $.ajax(feed, {
+    var twitchFeed;
+    
+    switch (feed) {
+    case "ezlife":
+        twitchFeed = "https://ezlife.eu/apps/gitlab/philippm/ezlife.eu/commits/master.atom";
+        break;
+    case "ezRunner":
+        twitchFeed = "https://ezlife.eu/apps/gitlab/philippm/unity-android-mario/commits/master.atom";
+        break;
+    default:
+        break;
+    }
+    
+    $.ajax(twitchFeed, {
         accepts: {
             xml: "application/xml"
         },
@@ -22,7 +33,7 @@ function loadezlifeRSS() {
         success: function (data) {
             $(data).find("entry").slice(0, 10).each(function () {
                 var el = $(this);
-                createEntry(el.find("id").text(), el.find("title").text(), el.find("updated").text());
+                createEntry(el.find("id").text(), el.find("title").text(), el.find("updated").text(), feed);
             });
         }
     });
