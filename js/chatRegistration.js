@@ -1,6 +1,6 @@
 function registerUser() {
     // REST-API URL
-    var url = "http://chat:9091/plugins/restapi/v1/users";
+    var url = "https://chat.ezlife.eu:9091/plugins/restapi/v1/users";
     
     // Get Variables from HTML-Page
     var user = document.getElementById('username').value;
