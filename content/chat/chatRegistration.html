@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- General Settings -->
+    <title>chat.ezlife.eu</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/ezlife/favicon.ico">
+    
+    <!-- Mobile First -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Import Javascript, JQuery and Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- Registration -->
+    <script language="javascript" type="text/javascript" src="../../js/chatRegistration.js"></script>
+    
+    <!-- Import Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    
+    <!-- Import Main Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="https://ezlife.eu">EZLIFE.eu</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#registration">REGISTRATION</a></li>
+          <li><a href="#howto">HOWTO</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">LINKS
+                  <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="http://chat.ezlife.eu">Chat</a></li>
+                  <li><a href="http://cloud.ezlife.eu">Cloud</a></li>
+                  <li><a href="http://gitlab.ezlife.eu">Gitlab</a></li>
+                  <li><a href="http://mail.ezlife.eu">Mail</a></li>
+                  <li><a href="#">Media</a></li>
+                  <li><a href="http://music.ezlife.eu">Music</a></li> 
+                  <li><a href="http://confluence.ezlife.eu">Wiki</a></li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+          <img src="../../img/header.jpg" alt="header1" width="1200" height="700">
+          <div class="carousel-caption">
+            <h3>ezlife</h3>
+            <p>op...</p>
+          </div>      
+      </div>
+
+    <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+    
+<!-- Container - Registration -->
+<div id="registration" class="container text-center">
+  <h3>CHAT.EZLIFE.EU</h3>
+  <div class="row">
+    <div class="col-sm-12">
+      <p class="text-center"><strong>Registration</strong></p><br>
+        <form>
+        <div class="col-sm-12 text-center">
+            <p>
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username"><br>
+            </p>
+            <p>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password"><br>
+            </p>
+            <p>
+                <label for="password">Repeat Password</label><br>
+                <input type="password" id="password2" name="password2"><br>
+            </p>
+            <p>
+                <label for="email">E-Mail</label><br>
+                <input type="text" id="email" name="email"><br>
+            </p>
+        </div>
+	    </form>
+        <p>
+           <button onclick="registerUser()" type="submit" name="submit">Send</button>
+        </p>
+     </div>
+    </div>
+</div>
+
+<!-- Container - Howto -->
+<div class="bg-1">
+  <div id="howto" class="container">
+    <h3 class="text-center">HOWTO</h3>
+    <p class="text-center">YOYOYO!</p>
+  </div>
+</div>
+    
+<!-- Container - About -->
+<div id="about" class="container">
+    <h3 class="text-center">About</h3>
+    <p class="text-center">8A:D0:97:D0:79:3E:43:ED:18:87:79:44:24:EA:6E:66
+        38:E5:5F:F4:DC:2C:40:C6:D6:A8:D6:02:13:2D:46:42</p>
+</div>
+    
+<!-- Container - Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#home" data-toggle="tooltip" title="top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>designed by - <a href="https://ezlife.eu" data-toggle="tooltip" title="ezlife">ezlife.eu</a></p> 
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#home']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      // Store hash
+      var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>
