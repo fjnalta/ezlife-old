@@ -179,24 +179,22 @@
 <div id="latest" class="container">
     <h3 class="text-center">LATEST MESSAGES</h3>  
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#ezlife">ezlife.eu</a></li>
-        <li><a data-toggle="tab" href="#wiki">wiki.ezlife.eu</a></li>
+        <li class="active"><a data-toggle="tab" href="#wiki">wiki.ezlife.eu</a></li>
+        <li><a data-toggle="tab" href="#ezlife">ezlife.eu</a></li>
         <li><a data-toggle="tab" href="#ezRunner">ezRunner</a></li>
-        <li><a data-toggle="tab" href="#schwesta">[EZ]schwesta</a></li>
-        <li><a data-toggle="tab" href="#eise">[EZ]eise</a></li>
     </ul>
     <div class="tab-content">
+       <div id="wiki" class="tab-pane fade">
+            <h2>News</h2>
+            <div id="wikiRSS">
+                <!-- Wiki RSS here -->
+            </div>
+        </div>
         <div id="ezlife" class="tab-pane fade in active">
             <h2>Development</h2>
             <p><b>Last 10 Commits</b></p>
             <div id="ezlifeRSS">
                 <script type="text/javascript">loadRSS("ezlife");</script>
-            </div>
-        </div>
-        <div id="wiki" class="tab-pane fade">
-            <h2>News</h2>
-            <div id="wikiRSS">
-                <!-- Wiki RSS here -->
             </div>
         </div>
         <div id="ezRunner" class="tab-pane fade">
@@ -205,16 +203,6 @@
             <div id="ezRunnerRSS">
                 <script type="text/javascript">loadRSS("ezRunner");</script>
             </div>
-        </div>
-       <div id="schwesta" class="tab-pane fade">
-            <h2>General</h2>
-            <p>Today 04.12. 18h-20h MEZ H1Z1 Duo</p>
-            <h2>H1Z1</h2>
-            <p>36 in a row - op!</p>
-        </div>
-        <div id="eise" class="tab-pane fade">
-            <h2>Watchdogs 2</h2>
-            <p>ezpz</p>
         </div>
     </div>
 </div>
