@@ -1,4 +1,19 @@
+function setRegistrationState(state) {
+    "use strict";
+    switch (state) {
+    case "success":
+        $("#divCheckRegistration").html("Success! User created");
+        break;
+    case "fail":
+        $("#divCheckRegistration").html("Failed! User not created");
+        break;
+    default:
+        break;
+    }
+}
+
 function registerUser() {
+    "use strict";
     // REST-API URL
     var url = "https://ezlife.eu/apps/chat";
     
@@ -22,8 +37,7 @@ function registerUser() {
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.setRequestHeader("Authorization", "kAmkjv3879kK0v82");
         xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var json = JSON.parse(xhr.responseText);
+            if (xhr.readyState == 4 && xhr.status == 201) {
                 setRegistrationState("success");
             } else {
                 setRegistrationState("fail");
@@ -36,6 +50,7 @@ function registerUser() {
 }
 
 function checkPasswordMatch() {
+    "use strict";
     var password = $("#password").val();
     var confirmPassword = $("#password2").val();
     
@@ -44,23 +59,11 @@ function checkPasswordMatch() {
         $("#divCheckPasswordMatch").html("Passwords do not match!");
     } else {
         $("#password2").css("background-color", "#66cc66");
-        $("#divCheckPasswordMatch").html("Passwords match.");        
-    }
-}
-
-function setRegistrationState(state) {
-    switch (state) {
-    case "success":
-        $("#divCheckRegistration").html("Success! User created");
-        break;
-    case "fail":
-        $("#divCheckRegistration").html("Failed! User not created");
-        break;
-    default:
-        break;
+        $("#divCheckPasswordMatch").html("Passwords match.");
     }
 }
 
 $(document).ready(function () {
-   $("#password, #password2").keyup(checkPasswordMatch);
+    "use strict";
+    $("#password, #password2").keyup(checkPasswordMatch);
 });
