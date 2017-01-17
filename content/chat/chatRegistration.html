@@ -25,9 +25,9 @@
     <link href="../../css/style.css" rel="stylesheet" type="text/css">
     
     <!-- reCaptcha -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 </head>
-<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50" onload="loadCaptcha()">
     
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -100,15 +100,20 @@
         <form>
         <div class="col-sm-12 text-center">
             <p>
-                <label for="username">Username</label><br>
+                <label for="username">Username*</label><br>
                 <input type="text" id="username" name="username"><br>
             </p>
             <p>
-                <label for="password">Password</label><br>
-                <input type="password" id="password" name="password" onchange="checkPasswordMatch();"><br>
+                <label for="nickname">Nickname*</label><br>
+                <input type="text" id="nickname" name="nickname"><br>
             </p>
             <p>
-                <label for="password">Repeat Password</label><br>
+                <label for="password">Password*</label><br>
+                <input type="password" id="password" name="password" onchange="checkPasswordMatch();"><br>
+                <i>Password needs to be at least 8 letters.</i>
+            </p>
+            <p>
+                <label for="password">Repeat Password*</label><br>
                 <input type="password" id="password2" name="password2"><br>
             </p>
             <div class="registrationFormAlert" id="divCheckPasswordMatch">---</div>
@@ -117,10 +122,10 @@
                 <input type="text" id="email" name="email"><br>
             </p>
             <!-- Captcha -->
-            <div class="g-recaptcha" data-sitekey="6LerExIUAAAAAFxTCbvdsNpOUrsXfxg7yqMniZQT" align="center"></div>
+            <div align="center" id="captcha"></div>
         </div>
 	    </form>
-        <p>---</p>
+        <p><i>* are required fields </i></p>
         <button onclick="registerUser()" margin-top="50px" type="submit" name="submit">Send</button>
         <p></p>
         <div class="registrationAlert" id="divCheckRegistration">---</div>
