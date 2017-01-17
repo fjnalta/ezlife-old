@@ -105,12 +105,13 @@
             </p>
             <p>
                 <label for="password">Password</label><br>
-                <input type="password" id="password" name="password"><br>
+                <input type="password" id="password" name="password" onchange="checkPasswordMatch();"><br>
             </p>
             <p>
                 <label for="password">Repeat Password</label><br>
                 <input type="password" id="password2" name="password2"><br>
             </p>
+            <div class="registrationFormAlert" id="divCheckPasswordMatch">---</div>
             <p>
                 <label for="email">E-Mail</label><br>
                 <input type="text" id="email" name="email"><br>
@@ -119,9 +120,10 @@
             <div class="g-recaptcha" data-sitekey="6LerExIUAAAAAFxTCbvdsNpOUrsXfxg7yqMniZQT" align="center"></div>
         </div>
 	    </form>
-        <p>
-           <button onclick="registerUser()" type="submit" name="submit">Send</button>
-        </p>
+        <p>---</p>
+        <button onclick="registerUser()" margin-top="50px" type="submit" name="submit">Send</button>
+        <p></p>
+        <div class="registrationAlert" id="divCheckRegistration">---</div>
      </div>
     </div>
 </div>

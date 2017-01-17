@@ -1,6 +1,6 @@
 function registerUser() {
     // REST-API URL
-    var url = "http://chat.ezlife.eu:9090/plugins/restapi/v1/users";
+    var url = "https://ezlife.eu/apps/chat";
     
     // Get Variables from HTML-Page
     var user = document.getElementById('username').value;
@@ -17,58 +17,50 @@ function registerUser() {
         });
     
         // Start REST-POST
-        xhr = new XMLHttpRequest();
+        var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.setRequestHeader("Authorization", "kAmkjv3879kK0v82");
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var json = JSON.parse(xhr.responseText);
-                successMessage();
+                setRegistrationState("success");
             } else {
-                errorMessage();
+                setRegistrationState("fail");
             }
         };
         xhr.send(data);
     } else {
-        // TODO - Passwords do not match
+        setRegistrationState("fail");
     }
 }
 
-function errorMessage(){
-    var error = document.createElement("div");
-    var tag = document.createElement("a");
+function checkPasswordMatch() {
+    var password = $("#password").val();
+    var confirmPassword = $("#password2").val();
     
-    // create Error Message
-    tag.setAttribute('href','#');
-    tag.setAttribute('data-dismiss','alert');
-    tag.setAttribute('arial-label','close');
-    tag.innerHTML = "&times;"
-    tag.className = "close";
-    
-    error.className = "alert alert-danger alert-dismissable fade in";
-    error.appendChild(tag);
-    error.innerHTML = "<strong>ERROR!</strong> User not created"
-
-    // show Error Message
-    document.getElementById("home").appendChild(error);
+    if (password != confirmPassword) {
+        $("#password2").css("background-color", "#ff6666");
+        $("#divCheckPasswordMatch").html("Passwords do not match!");
+    } else {
+        $("#password2").css("background-color", "#66cc66");
+        $("#divCheckPasswordMatch").html("Passwords match.");        
+    }
 }
 
-function successMessage(){
-    var success = document.createElement("div");
-    var atag = document.createElement("a");
-    
-    // create Error Message
-    atag.setAttribute('href','#');
-    atag.setAttribute('data-dismiss','alert');
-    atag.setAttribute('arial-label','close');
-    atag.innerHTML = "&times;"
-    atag.className = "close";
-    
-    success.className = "alert alert-success alert-dismissable fade in";
-    success.appendChild(tag);
-    success.innerHTML = "<strong>SUCCESS!</strong> User created"
-
-    // show Error Message
-    document.getElementById("home").appendChild(error);
+function setRegistrationState(state) {
+    switch (state) {
+    case "success":
+        $("#divCheckRegistration").html("Success! User created");
+        break;
+    case "fail":
+        $("#divCheckRegistration").html("Failed! User not created");
+        break;
+    default:
+        break;
+    }
 }
+
+$(document).ready(function () {
+   $("#password, #password2").keyup(checkPasswordMatch);
+});
