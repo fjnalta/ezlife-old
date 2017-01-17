@@ -72,6 +72,7 @@ function registerUser() {
         } else {
             setRegistrationState("fail");
         }
+        grecaptcha.reset();
     }
 }
 
