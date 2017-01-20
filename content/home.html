@@ -1,0 +1,148 @@
+<head>
+    <!-- General Settings -->
+    <title>ezlife.eu</title>
+    <!-- RSS Loading -->
+    <script language="javascript" type="text/javascript" src="js/loadRSS.js"></script>
+</head>
+
+<!-- NavBar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" onclick="loadContent('ezlife');return false">EZLIFE.eu</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#header">HOME</a></li>
+          <li><a href="#twitch">TWITCH</a></li>
+          <li><a href="#latest">LATEST MESSAGES</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#modal-impressum" onclick="loadContent('impressum');return false;">IMPRESSUM</a></li>
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">LINKS
+                  <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="#" onclick="loadContent('chat');return false;">Chat</a></li>
+                  <li><a href="http://cloud.ezlife.eu">Cloud</a></li>
+                  <li><a href="http://gitlab.ezlife.eu">Gitlab</a></li>
+                  <li><a href="http://mail.ezlife.eu">Mail</a></li>
+                  <li><a href="#">Media</a></li>
+                  <li><a href="http://music.ezlife.eu">Music</a></li> 
+                  <li><a href="http://confluence.ezlife.eu">Wiki</a></li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Container - Ezlife.eu -->
+<div id="header" class="container text-center">
+  <h3>EZLIFE.EU</h3>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <img src="img/ezlife/ezlife.png" class="img-circle person" alt="ezlife-logo">        
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <p><em>Tonight, we have a chance to say, 'Yeah, you're right. We're too wild. We're too out of control. We're too full of our own shit.' Or we have a chance to say, 'Hey, fuck you, you're wrong! Fuck you, we're right!' Because you have all made it to the dance. Cause believe me, this is the dance! Start the show!</em></p>
+</div>
+
+<!-- Container - Twitch -->
+<div id="twitch" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">TWITCH</h3>
+    <p class="text-center">Livestreaming games on a high level<br> Remember to subscribe!</p>
+      <iframe 
+        src="https://player.twitch.tv/?channel=lanstyler" 
+        width="32%" 
+        frameborder="0" 
+        scrolling="no"
+        allowfullscreen="true">
+      </iframe>
+      <iframe 
+        src="https://player.twitch.tv/?channel=schwestaschwesta" 
+        width="32%" 
+        frameborder="0" 
+        scrolling="no"
+        allowfullscreen="true">
+      </iframe>
+      <iframe 
+        src="https://player.twitch.tv/?channel=eisbert88"  
+        width="32%" 
+        frameborder="0" 
+        scrolling="no"
+        allowfullscreen="true">
+      </iframe>
+  </div>
+</div>
+
+<!-- Container - Latest Messages -->
+<div id="latest" class="container">
+    <h3 class="text-center">LATEST MESSAGES</h3>  
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#wiki">wiki.ezlife.eu</a></li>
+        <li><a data-toggle="tab" href="#ezlife">ezlife.eu</a></li>
+        <li><a data-toggle="tab" href="#ezRunner">ezRunner</a></li>
+    </ul>
+    <div class="tab-content">
+       <div id="wiki" class="tab-pane fade in active">
+            <h2>News</h2>
+            <div id="wikiRSS">
+                <!-- Wiki RSS here -->
+            </div>
+        </div>
+        <div id="ezlife" class="tab-pane fade">
+            <h2>Development</h2>
+            <p><b>Last 10 Commits</b></p>
+            <div id="ezlifeRSS">
+                <script type="text/javascript">loadRSS("ezlife");</script>
+            </div>
+        </div>
+        <div id="ezRunner" class="tab-pane fade">
+            <h2>Development</h2>
+            <p><b>Last 10 Commits</b></p>
+            <div id="ezRunnerRSS">
+                <script type="text/javascript">loadRSS("ezRunner");</script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container - Contact -->
+<div id="latest" class="bg-1">
+    <div id="contact" class="container">
+        <h3 class="text-center">Contact</h3>
+        <p class="text-center"><em>Any Questions? Write us.</em></p>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p><span class="glyphicon glyphicon-envelope"></span>Email: support@ezlife.eu</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <button class="btn pull-right" type="submit">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

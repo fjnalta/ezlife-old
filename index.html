@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- General Settings -->
-    <title>ezlife.eu</title>
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="img/ezlife/favicon.ico">
     
     <!-- Mobile First -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Import Javascript, JQuery and Bootstrap -->
+    <!-- Import JQuery and Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <!-- More JavaScript -->
-    <script language="javascript" type="text/javascript" src="js/loadRSS.js"></script>
     
     <!-- Import Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -23,44 +18,17 @@
     
     <!-- Import Main Stylesheet -->
     <link href="css/style.css" rel="stylesheet" type="text/css">
-</head>
-<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
     
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#home">EZLIFE.eu</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="#header">HOME</a></li>
-          <li><a href="#twitch">TWITCH</a></li>
-          <li><a href="#latest">LATEST MESSAGES</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#modal-impressum">IMPRESSUM</a></li>
-          <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">LINKS
-                  <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                  <li><a href="http://chat.ezlife.eu">Chat</a></li>
-                  <li><a href="http://cloud.ezlife.eu">Cloud</a></li>
-                  <li><a href="http://gitlab.ezlife.eu">Gitlab</a></li>
-                  <li><a href="http://mail.ezlife.eu">Mail</a></li>
-                  <li><a href="#">Media</a></li>
-                  <li><a href="http://music.ezlife.eu">Music</a></li> 
-                  <li><a href="http://confluence.ezlife.eu">Wiki</a></li>
-              </ul>
-          </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Import more JavaScript -->
+    <script language="javascript" type="text/javascript" src="js/contentManager.js"></script>
+    <script language="javascript" type="text/javascript" src="js/smoothScrolling.js"></script>
+    
+    <!-- reCaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js?' async defer></script>
+</head>
+    
+<!-- Start Body -->
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <!-- Header -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -91,110 +59,8 @@
     </div>
 </div>
     
-<!-- Container - Ezlife.eu -->
-<div id="header" class="container text-center">
-  <h3>EZLIFE.EU</h3>
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <img src="img/ezlife/ezlife.png" class="img-circle person" alt="ezlife-logo">        
-        </div>
-        <div class="col-sm-4"></div>
-    </div>
-    <p><em>Tonight, we have a chance to say, 'Yeah, you're right. We're too wild. We're too out of control. We're too full of our own shit.' Or we have a chance to say, 'Hey, fuck you, you're wrong! Fuck you, we're right!' Because you have all made it to the dance. Cause believe me, this is the dance! Start the show!</em></p>
-</div>
-
-<!-- Container - Twitch -->
-<div id="twitch" class="bg-1">
-  <div class="container">
-    <h3 class="text-center">TWITCH</h3>
-    <p class="text-center">Livestreaming games on a high level<br> Remember to subscribe!</p>
-      <iframe 
-        src="https://player.twitch.tv/?channel=lanstyler" 
-        width="32%" 
-        frameborder="0" 
-        scrolling="no"
-        allowfullscreen="true">
-      </iframe>
-      <iframe 
-        src="https://player.twitch.tv/?channel=schwestaschwesta" 
-        width="32%" 
-        frameborder="0" 
-        scrolling="no"
-        allowfullscreen="true">
-      </iframe>
-      <iframe 
-        src="https://player.twitch.tv/?channel=eisbert88"  
-        width="32%" 
-        frameborder="0" 
-        scrolling="no"
-        allowfullscreen="true">
-      </iframe>
-  </div>
-</div>
-
-<!-- Container - Latest Messages -->
-<div id="latest" class="container">
-    <h3 class="text-center">LATEST MESSAGES</h3>  
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#wiki">wiki.ezlife.eu</a></li>
-        <li><a data-toggle="tab" href="#ezlife">ezlife.eu</a></li>
-        <li><a data-toggle="tab" href="#ezRunner">ezRunner</a></li>
-    </ul>
-    <div class="tab-content">
-       <div id="wiki" class="tab-pane fade in active">
-            <h2>News</h2>
-            <div id="wikiRSS">
-                <!-- Wiki RSS here -->
-            </div>
-        </div>
-        <div id="ezlife" class="tab-pane fade">
-            <h2>Development</h2>
-            <p><b>Last 10 Commits</b></p>
-            <div id="ezlifeRSS">
-                <script type="text/javascript">loadRSS("ezlife");</script>
-            </div>
-        </div>
-        <div id="ezRunner" class="tab-pane fade">
-            <h2>Development</h2>
-            <p><b>Last 10 Commits</b></p>
-            <div id="ezRunnerRSS">
-                <script type="text/javascript">loadRSS("ezRunner");</script>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Container - Contacts -->
-<div id="latest" class="bg-1">
-    <div id="contact" class="container">
-        <h3 class="text-center">Contact</h3>
-        <p class="text-center"><em>Any Questions? Write us.</em></p>
-
-        <div class="row">
-            <div class="col-md-4">
-                <p><span class="glyphicon glyphicon-envelope"></span>Email: support@ezlife.eu</p>
-            </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-sm-6 form-group">
-                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                    </div>
-                </div>
-                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-                <br>
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                        <button class="btn pull-right" type="submit">Send</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Container - Content -->
+<div id="content"></div>
     
 <!-- Container - About -->
 <div id="about" class="container">
@@ -203,11 +69,17 @@
         38:E5:5F:F4:DC:2C:40:C6:D6:A8:D6:02:13:2D:46:42</p>
 </div>
     
+<!-- Container - Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#home" data-toggle="tooltip" title="top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>designed by - <a href="https://ezlife.eu" data-toggle="tooltip" title="ezlife">ezlife.eu</a></p> 
+</footer>
+    
 <!-- Modal - Impressum -->
 <div id="modal-impressum" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -236,42 +108,10 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-
   </div>
 </div>
-    
-<!-- Container - Footer -->
-<footer class="text-center">
-  <a class="up-arrow" href="#home" data-toggle="tooltip" title="top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a><br><br>
-  <p>designed by - <a href="https://ezlife.eu" data-toggle="tooltip" title="ezlife">ezlife.eu</a></p> 
-</footer>
-
-<script>
-$(document).ready(function(){
-  // Initialize Tooltip
-  $('[data-toggle="tooltip"]').tooltip(); 
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#home']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-      // Store hash
-      var hash = this.hash;
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-})
-</script>
 
 </body>
 </html>
+    
+
